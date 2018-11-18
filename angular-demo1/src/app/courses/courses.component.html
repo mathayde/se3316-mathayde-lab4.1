@@ -2,11 +2,18 @@
 
 {{title}} 
 
-<input type="text" name="test" style='width:120px' appAutoGrow/>
-
 <ul>
     <li *ngFor="let course of courses">
         {{course}}
     </li>
     
 </ul>
+
+<div id='manage-bar'>
+    <form class='form-inline' (submit)="addCourse()">
+        <div class="form-group" id="textentry">
+            <input [(ngModel)]="text" type="text" class="form-control input-lg" name="courseName" placeholder='Enter a Course Name...' appAutoGrow/>
+        </div>
+        <button name="addCourse" class='btn btn-success btn-lg'>Add Course</button>
+    </form>
+</div>
